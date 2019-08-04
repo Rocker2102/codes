@@ -1,4 +1,4 @@
-// Write a program to create a linked list, add elements to the list (in beginning, end and middle), view elements of the list and delete elements from the list (from any position).
+// Program to create a linked list, add elements to the list (in beginning, end and middle), view elements of the list and delete elements from the list (from any position).
 
 #include<stdio.h>
 #include<stdlib.h>
