@@ -19,7 +19,7 @@ NODE *head = NULL, *last = NULL;
 int main(){
 	int choice = 0;
 	
-	printf("\n --- MENU ---\n");
+	printf("\n --- MENU ---\n"); //Menu Bar
 	printf("1. Add data\n");
 	printf("2. View list\n");
 	printf("3. Delete data\n");
