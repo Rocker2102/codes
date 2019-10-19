@@ -11,7 +11,7 @@ int COUNT(void);
 struct node{
 	int data;
 	struct node *link;
-};
+}; //structure declaration
 
 typedef struct node NODE;
 NODE *head = NULL, *last = NULL;
