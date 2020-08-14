@@ -113,7 +113,49 @@ void addNode() {
 }
 
 void deleteNode() {
+    int position = 1, data = 0;
+    int maxNodes = countNodes();
 
+    if (maxNodes != 0) {
+        printf("Enter position (1 - %d): ", maxNodes);
+        scanf("%d", &position);
+
+        if (position < 1 || position > maxNodes) {
+            printf("Invalid position!\n");
+            return;
+        }
+    } else {
+            printf("List is Empty!\n");
+            return;
+    }
+
+    if (position == 1) {
+        data = head->data;
+        if (head->next != NULL) {
+            head = head->next;
+        } else {
+            head = last = NULL;
+        }
+    } else {
+        NODE *ptr = head, *prev;
+        int i = 1;
+        while (ptr) {
+            if (i == position) {
+                break;
+            }
+            i++;
+            prev = ptr;
+            ptr = ptr->next;
+        }
+        data = ptr->data;
+        prev->next = ptr->next;
+        if (position == maxNodes) {
+            last = prev;
+        }
+    }
+
+    printf("Node at position %d (Data: %d) deleted!\n", position, data);
+    return;
 }
 
 void displayList() {
