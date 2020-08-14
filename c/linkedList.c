@@ -63,10 +63,10 @@ void addNode() {
     NODE *temp = (NODE *)malloc(sizeof(NODE));
 
     if (maxNodes != 0) {
-        printf("Enter position (1 - %d): ", maxNodes);
+        printf("Enter position (1 - %d): ", maxNodes + 1);
         scanf("%d", &position);
 
-        if (position < 1 || position > maxNodes) {
+        if (position < 1 || position > maxNodes + 1) {
             printf("Invalid position!\n");
             addNode();
         }
@@ -76,19 +76,31 @@ void addNode() {
     scanf("%d", &temp->data);
 
     if (position == 1) {
-        if (head ==  NULL) {
+        if (head == NULL) {
             head = last = temp;
             last->next = NULL;
         } else {
             temp->next = head;
             head = temp;
         }
-    } else if (position == maxNodes) {
+    } else if (position == maxNodes + 1) {
         last->next = temp;
         last = temp;
         last->next = NULL;
     } else {
+        NODE *ptr = head, *prev;
+        int i = 1;
+        while (ptr) {
+            if (i == position) {
+                break;
+            }
+            i++;
+            prev = ptr;
+            ptr = ptr->next;
+        }
 
+        prev->next = temp;
+        temp->next = ptr;
     }
 
     printf("Data Inserted!\n");
@@ -100,7 +112,7 @@ void deleteNode() {
 }
 
 void displayList() {
-    int numNodes = countNodes();
+    int numNodes = countNodes(), i=1;
 
     dividor();
 
@@ -115,6 +127,7 @@ void displayList() {
                 printf(" -> ");
             }
             ptr = ptr->next;
+            i++;
         }
     }
 
