@@ -125,7 +125,7 @@ void deleteNode() {
             return;
         }
     } else {
-            printf("List is Empty!\n");
+            displayList();
             return;
     }
 
