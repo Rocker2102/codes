@@ -18,26 +18,31 @@ NODE *head = NULL, *last = NULL;
 
 int main() {
     menu();
+    return 0;
 }
 
 void menu() {
-    int input;
+    int input = 1;
 
-    printf("\n");
-    printf("### MENU ###\n");
-    printf("Select any option:\n");
-    printf("1. Add node\n");
-    printf("2. Delete node\n");
-    printf("3. View List\n");
-    printf("#. Exit\n");
+    while (input) {
+        printf("\n");
+        printf("### MENU ###\n");
+        printf("Select any option:\n");
+        printf("1. Add node\n");
+        printf("2. Delete node\n");
+        printf("3. View List\n");
+        printf("#. Exit\n");
 
-    scanf("%d", &input);
-    switch (input) {
-        case 1: addNode(); break;
-        case 2: deleteNode(); break;
-        case 3: displayList(); break;
-        default: exit(0); break;
+        scanf("%d", &input);
+        switch (input) {
+            case 1: addNode(); break;
+            case 2: deleteNode(); break;
+            case 3: displayList(); break;
+            default: exit(0); break;
+        }
     }
+
+    return;
 }
 
 int countNodes() {
@@ -68,7 +73,7 @@ void addNode() {
 
         if (position < 1 || position > maxNodes + 1) {
             printf("Invalid position!\n");
-            addNode();
+            return;
         }
     }
 
@@ -104,7 +109,7 @@ void addNode() {
     }
 
     printf("Data Inserted!\n");
-    menu();
+    return;
 }
 
 void deleteNode() {
@@ -132,9 +137,10 @@ void displayList() {
     }
 
     dividor();
-    menu();
+    return;
 }
 
 void dividor() {
     printf("\n-------------------------------------------------\n");
+    return;
 }
