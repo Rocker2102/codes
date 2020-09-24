@@ -1,4 +1,4 @@
-class Solution {
+class String_to_java {
     public int myAtoi(String str) {
         long n=0;
         int j=0,sign=1;
