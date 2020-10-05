@@ -4,3 +4,4 @@
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | **Singly Linked List** | <a href="c/linkedList.c">:heavy_check_mark:</a> | <a href="c++/linkedList.cpp">:heavy_check_mark:</a> | :x: | :x: | :x: | :x: |
 | **Doubly Linked List** | :x: | :x: | :x: | :x: | :x: | :x: |
+| **Binary Strings** | :x: | <a href="c++/binary_string.cpp">:heavy_check_mark:</a> | :x: | :x: | :x: | :x: |
